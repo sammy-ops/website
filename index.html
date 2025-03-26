@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Navbar</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: auto;
+        padding: 0;
+      }
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        position: static;
+        width: 100%;
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+      }
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #555;
+      }
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: #555;
+        outline: inherit;
+        color: white;
+        padding: 11px 15px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        cursor: pointer;
+      }
+      .dropcontent {
+        display: none;
+        padding: 2px;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropcontent a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+      }
+      .dropcontent a:hover {
+        background-color: #ddd;
+      }
+      .dropdown:hover .dropcontent {
+        display: block;
+      }
+      .show {
+        display: block;
+      }
+      video {
+        width: 100%;
+      }
+      .heading {
+        text-align: center;
+        color: #3e5055;
+        font-family: sans-serif;
+        animation: forwards;
+        animation-delay: 5s;
+      }
+      .high {
+        color: #54c5c8;
+        text-transform: capitalize;
+        animation: forwards;
+        animation-delay: 5s;
+      }
+      .chnage {
+        font-size: 2em;
+        text-align: center;
+        font-family: sans-serif;
+        color: #3e5055;
+      }
+      .changing-text {
+        display: inline-block;
+        color: brown;
+        overflow: hidden;
+        height: 1.2em;
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+
+      .changing-text span {
+        display: block;
+        animation: changeText 6s infinite;
+      }
+      @keyframes changeText {
+        0% {
+          transform: translateY(0%);
+        }
+        25% {
+          transform: translateY(-100%);
+        }
+        50% {
+          transform: translateY(-200%);
+        }
+        75% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+      .getstarted {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .started {
+        background-color: #04aa6d;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 15px;
+      }
+      .started:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+      .container {
+        display: flex;
+        padding: 30px;
+        gap: 50px;
+      }
+      .card {
+        display: flex;
+      }
+      .icon {
+        padding: 10px;
+        margin: 10px;
+      }
+      .icon img {
+        width: 40px;
+        height: 40px;
+        padding-block: 5px;
+      }
+      .content h2 {
+        font-size: 18px;
+        margin: 10px;
+        color: #333;
+      }
+
+      .content p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+      .footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+      }
+      .footertop {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 40px;
+        max-width: 900px;
+      }
+
+      .about,
+      .links {
+        flex: 1;
+        max-width: 45%;
+      }
+
+      .about p,
+      .links ul {
+        margin: 10px 0;
+      }
+
+      .links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .links ul li {
+        margin-bottom: 8px;
+      }
+
+      .links ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .links ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #555;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Services &#11167;<i class="dropdrop"></i>
+          </button>
+          <div class="dropcontent">
+            <a href="#">IT Talent Acquisition</a>
+            <a href="#">Temporary & Contract Staffing</a>
+            <a href="#">Executive Search</a>
+            <a href="#">Diversity & Inclusion Recruiting</a>
+            <a href="#">Employer Branding Services</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Contact &#11167;<i class="dropdrop"></i>
+          </button>
+          <div class="dropcontent">
+            <a href="#">X</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Email</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <video autoplay loop muted src="1.mp4" alt="video"></video>
+    <main>
+      <h1 class="heading">
+        Connecting Top IT Talent with Leading Companies Across
+      </h1>
+      <div class="chnage">
+        serving countries
+        <div class="changing-text">
+          <span>USA</span>
+          <span>Canada</span>
+          <span>Mexico</span>
+        </div>
+      </div>
+      <div class="getstarted">
+        <button class="started">Get Started</button>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="icon">
+            <img src="images.jpg" alt="Icon" />
+          </div>
+          <div class="content">
+            <h2>Our Mission</h2>
+            <p>
+              At Conjoint Inc., we are committed to helping businesses thrive
+              through innovative recruitment strategies that attract and retain
+              the best IT professionals in the industry. Our mission is to build
+              lasting relationships with both our clients and candidates by
+              providing exceptional service, quality, and results.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <img src="images.jpg" alt="Team Icon" />
+          </div>
+          <div class="content">
+            <h2>Our Team</h2>
+            <p>
+              Our team is made up of experienced recruiters who specialize in IT
+              and technology industries. We are passionate about helping
+              businesses grow and supporting professionals in their career
+              journeys. With expertise in sourcing, interviewing, and managing
+              talent pipelines, our team provides unmatched service for both
+              clients and candidates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footertop">
+        <div class="row">
+          <div class="about">
+            <a href="index.html" class="logo" style="color: brown">
+              <span class="sitename">Conjoint Inc</span>
+            </a>
+            <div class="address" style="width: 300px">
+              <p>
+                4660 La Jolla Village Dr. Suite #500 <br />San Diego, CA 92122
+              </p>
+              <p class="mt-3">
+                <strong>Phone:</strong> <span>+1 858-527-0260</span>
+              </p>
+              <p><strong>Email:</strong> <span>info@conjointinc.com</span></p>
+            </div>
+          </div>
+
+          <div class="links">
+            <h4 style="width: 300px">Useful Links</h4>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="">Services</a></li>
+              <li><a href="">Terms of service</a></li>
+              <li><a href="">Privacy policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
