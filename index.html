@@ -1,334 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dropdown Navbar</title>
-    <link rel="stylesheet" href="navbar.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: auto;
-        padding: 0;
-      }
-      .navbar {
-        background-color: #333;
-        overflow: hidden;
-        position: static;
-        width: 100%;
-      }
-      .navbar a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-      }
-      .navbar a:hover,
-      .dropdown:hover .dropbtn {
-        background-color: #555;
-      }
-      .dropdown {
-        float: left;
-        overflow: hidden;
-      }
-      .dropdown .dropbtn {
-        font-size: 16px;
-        border: #555;
-        outline: inherit;
-        color: white;
-        padding: 11px 15px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-        cursor: pointer;
-      }
-      .dropcontent {
-        display: none;
-        padding: 2px;
-        position: absolute;
-        background-color: white;
-        min-width: 200px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-      .dropcontent a {
-        color: black;
-        padding: 12px 16px;
-        display: block;
-      }
-      .dropcontent a:hover {
-        background-color: #ddd;
-      }
-      .dropdown:hover .dropcontent {
-        display: block;
-      }
-      .show {
-        display: block;
-      }
-      video {
-        width: 100%;
-      }
-      .heading {
-        text-align: center;
-        color: #3e5055;
-        font-family: sans-serif;
-        animation: forwards;
-        animation-delay: 5s;
-      }
-      .high {
-        color: #54c5c8;
-        text-transform: capitalize;
-        animation: forwards;
-        animation-delay: 5s;
-      }
-      .chnage {
-        font-size: 2em;
-        text-align: center;
-        font-family: sans-serif;
-        color: #3e5055;
-      }
-      .changing-text {
-        display: inline-block;
-        color: brown;
-        overflow: hidden;
-        height: 1.2em;
-        vertical-align: middle;
-        margin-left: 4px;
-      }
 
-      .changing-text span {
-        display: block;
-        animation: changeText 6s infinite;
-      }
-      @keyframes changeText {
-        0% {
-          transform: translateY(0%);
-        }
-        25% {
-          transform: translateY(-100%);
-        }
-        50% {
-          transform: translateY(-200%);
-        }
-        75% {
-          transform: translateY(-100%);
-        }
-        100% {
-          transform: translateY(0%);
-        }
-      }
-      .getstarted {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      .started {
-        background-color: #04aa6d;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        font-size: 18px;
-        margin-top: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-        border-radius: 15px;
-      }
-      .started:hover {
-        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-          0 17px 50px 0 rgba(0, 0, 0, 0.19);
-      }
-      .container {
-        display: flex;
-        padding: 30px;
-        gap: 50px;
-      }
-      .card {
-        display: flex;
-      }
-      .icon {
-        padding: 10px;
-        margin: 10px;
-      }
-      .icon img {
-        width: 40px;
-        height: 40px;
-        padding-block: 5px;
-      }
-      .content h2 {
-        font-size: 18px;
-        margin: 10px;
-        color: #333;
-      }
-
-      .content p {
-        font-size: 14px;
-        color: #555;
-        line-height: 1.6;
-      }
-      .footer {
-        background-color: #333;
-        color: white;
-        padding: 20px 0;
-      }
-      .footertop {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 40px;
-        max-width: 900px;
-      }
-
-      .about,
-      .links {
-        flex: 1;
-        max-width: 45%;
-      }
-
-      .about p,
-      .links ul {
-        margin: 10px 0;
-      }
-
-      .links ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .links ul li {
-        margin-bottom: 8px;
-      }
-
-      .links ul li a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .links ul li a:hover {
-        text-decoration: underline;
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #555;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="STyle.CSS">
+</head>
+<body>
     <header>
-      <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Features</a>
-        <div class="dropdown">
-          <button class="dropbtn">
-            Services &#11167;<i class="dropdrop"></i>
-          </button>
-          <div class="dropcontent">
-            <a href="#">IT Talent Acquisition</a>
-            <a href="#">Temporary & Contract Staffing</a>
-            <a href="#">Executive Search</a>
-            <a href="#">Diversity & Inclusion Recruiting</a>
-            <a href="#">Employer Branding Services</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">
-            Contact &#11167;<i class="dropdrop"></i>
-          </button>
-          <div class="dropcontent">
-            <a href="#">X</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Email</a>
-          </div>
-        </div>
-      </div>
-    </header>
-    <video autoplay loop muted src="1.mp4" alt="video"></video>
-    <main>
-      <h1 class="heading">
-        Connecting Top IT Talent with Leading Companies Across
-      </h1>
-      <div class="chnage">
-        serving countries
-        <div class="changing-text">
-          <span>USA</span>
-          <span>Canada</span>
-          <span>Mexico</span>
-        </div>
-      </div>
-      <div class="getstarted">
-        <button class="started">Get Started</button>
-      </div>
-      <div class="container">
-        <div class="card">
-          <div class="icon">
-            <img src="images.jpg" alt="Icon" />
-          </div>
-          <div class="content">
-            <h2>Our Mission</h2>
-            <p>
-              At Conjoint Inc., we are committed to helping businesses thrive
-              through innovative recruitment strategies that attract and retain
-              the best IT professionals in the industry. Our mission is to build
-              lasting relationships with both our clients and candidates by
-              providing exceptional service, quality, and results.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="icon">
-            <img src="images.jpg" alt="Team Icon" />
-          </div>
-          <div class="content">
-            <h2>Our Team</h2>
-            <p>
-              Our team is made up of experienced recruiters who specialize in IT
-              and technology industries. We are passionate about helping
-              businesses grow and supporting professionals in their career
-              journeys. With expertise in sourcing, interviewing, and managing
-              talent pipelines, our team provides unmatched service for both
-              clients and candidates.
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer id="footer" class="footer">
-      <div class="footertop">
-        <div class="row">
-          <div class="about">
-            <a href="index.html" class="logo" style="color: brown">
-              <span class="sitename">Conjoint Inc</span>
-            </a>
-            <div class="address" style="width: 300px">
-              <p>
-                4660 La Jolla Village Dr. Suite #500 <br />San Diego, CA 92122
-              </p>
-              <p class="mt-3">
-                <strong>Phone:</strong> <span>+1 858-527-0260</span>
-              </p>
-              <p><strong>Email:</strong> <span>info@conjointinc.com</span></p>
-            </div>
-          </div>
-
-          <div class="links">
-            <h4 style="width: 300px">Useful Links</h4>
+        <div class="nav">
             <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">About us</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">Terms of service</a></li>
-              <li><a href="">Privacy policy</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li class="dropdown"><a href="#"><span>Services</span></a>
+                    <ul>
+                        <li><a href="#">IT Talent Acquisition</a></li>
+                        <li><a href="#">Temporary & Contract Staffing</a></li>
+                        <li><a href="#">Executive Search</a></li>
+                        <li><a href="#">Diversity & Inclusion Recruiting</a></li>
+                        <li><a href="#">Employer Branding Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a>
+                    <ul>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </li>
             </ul>
-          </div>
+    </header>
+    </div>
+    <main>
+        <video muted loop autoplay src="1.mp4" alt="video" style="width: 100%; height: auto;"></video>
+        <div>
+            <p>
+            <h2 style="font-family: sans-serif; text-align: center;">Connecting Top IT Talent with Leading Companies Across <span style="color: darkcyan; font-family: sans-serif;">North America</span></h2>
+            </p>
         </div>
-      </div>
-    </footer>
-  </body>
+        <div style="text-align: center; font-family: sans-serif; font-weight: 700; color: rgb(37, 32, 32);">Serving the USA, Canada, and Mexico with Expert IT Recruitment Solutions</div>
+        <div class="butt"><button class="read">Read More</button></div>
+        <div class="container">
+            <div class="card">
+                <div><img src="images.jpg" alt="icon" class="icon"></div>
+                <div class="text">
+                    <h2>
+                        Our Mission
+                    </h2>
+                    <p>
+                        At Conjoint Inc., we are committed to helping businesses thrive through innovative recruitment
+                        strategies that attract and retain the best IT professionals in the industry. Our mission is to
+                        build lasting relationships with both our clients and candidates by providing exceptional service,
+                        quality, and results.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div><img src="images.jpg" alt="icon" class="icon"></div>
+                <div class="text">
+                    <h2>Our Team</h2>
+                <p>
+                    Our team is made up of experienced recruiters who specialize in IT and technology industries. We are
+                    passionate about helping businesses grow and supporting professionals in their career journeys. With
+                    expertise in sourcing, interviewing, and managing talent pipelines, our team provides unmatched
+                    service for both clients and candidates.
+                </p>
+                </div>
+        </div>
+        </div>
+        <div class="container2">
+            <div class="about-section">
+                <!-- About Us Text -->
+                <div class="about">
+                    <h3>ABOUT US</h3>
+                    <p>Conjoint Inc. is a leading IT recruitment company dedicated to connecting top-tier technology talent
+                        with innovative companies across the United States, Canada, and Mexico. We specialize in matching
+                        highly skilled professionals with dynamic, forward-thinking organizations in industries such as
+                        software development, cybersecurity, data science, IT infrastructure, and more.</p>
+                    <p>
+                        Our recruitment approach combines deep industry expertise, cutting-edge tools, and personalized
+                        service to ensure the right fit for both candidates and clients. Whether you are looking for
+                        contract, full-time, or project-based IT professionals, we provide tailored solutions to meet your
+                        specific hiring needs.
+                    </p>
+                    <!-- <div class="button"><button class="read">Read More</button></div> -->
+                     <div class="button"><button>Read More</button></div>
+                </div>
+        
+                <!-- Images Section -->
+                <div class="subicon">
+                    <div class="image1">
+                        <img src="images.jpg" alt="photo">
+                    </div>
+                    <div class="subicon2">
+                        <div>
+                            <img src="images.jpg" alt="photo">
+                        </div>
+                        <div>
+                            <img src="images.jpg" alt="photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h2>Overview of Services</h2>
+            <p>A brief overview of IT recruitment services tailored for clients and job seekers across North America</p>
+        </div>
+        <div>
+            <div>
+                <span><img src="images.jpg" alt="icon"></span>
+                <h2>
+                    IT Talent ACQUIZIATION
+                </h2>
+                <p>
+                    Specialized recruitment for software engineers, data analysts, cloud architects, network engineers,
+                    cybersecurity experts, and other tech professionals.
+                </p>
+                <p><a href="#"><strong>Read More</strong></a></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span><img src="images.jpg" alt="icon"></span>
+                <h2>
+                    Terporary and Contract Staffing
+                </h2>
+                <p>Targeted headhunting for C-level technology leaders and senior IT management roles.
+                </p>
+                <p><a href="#"><strong>Read More</strong></a></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span><img src="images.jpg" alt="icon"></span>
+                <h2>
+                    Terporary and Contract Staffing
+                </h2>
+                <p>Quick and flexible staffing solutions for project-based roles, short-term contracts, and long-term
+                    engagements.
+                </p>
+                <p><a href="#"><strong>Read More</strong></a></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span><img src="images.jpg" alt="icon"></span>
+                <h2>
+                    Terporary and Contract Staffing
+                </h2>
+                <p>Quick and flexible staffing solutions for project-based roles, short-term contracts, and long-term
+                    engagements.
+                </p>
+                <p><a href="#"><strong>Read More</strong></a></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span><img src="images.jpg" alt="icon"></span>
+                <h2>
+                    Terporary and Contract Staffing
+                </h2>
+                <p>Quick and flexible staffing solutions for project-based roles, short-term contracts, and long-term
+                    engagements.
+                </p>
+                <p><a href="#"><strong>Read More</strong></a></p>
+            </div>
+        </div>
+        <div>
+            <p>Contact Us</p>
+        </div>
+        <div>
+            <div>
+                <h4>Address</h4>
+                <p>4660 La Jolla Village Dr. Suite #500
+                    San Diego, CA 92122</p>
+            </div>
+            <div>
+                <h4>Call Us</h4>
+                <p>+1 4578986532</p>
+            </div>
+            <div>
+                <h4>
+                    Email
+                </h4>
+                <p>
+                    info@conjointinc.com
+                </p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1608.3670973693922!2d-117.27082250874554!3d32.833343606503526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc03b1ccbd19f7%3A0xb8317d0c0ed1aefc!2sDeep%20End%20Fitness!5e1!3m2!1sen!2sin!4v1743164244138!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div>
+                <div>
+                    <span><input type="name" placeholder="First Name"></span>
+                <span><input type="name" placeholder="Last Name"></span>
+                </div>
+                <div><span><input type="name" placeholder="Subject"></span>
+                </div>
+                <div><span><input type="text" placeholder="Message"></span>
+                </div>
+                <div>
+                    <button>Send Message</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <div class="card1">
+                    <h2>Company Name</h2>
+                    <p>4660 La Jolla Village Dr. Suite #500
+                        San Diego, CA 92122
+                        
+                        Phone: +1 858-527-0260
+                        
+                        Email: info@conjointinc.com</p>
+                </div>
+                <div class="card2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About us</li>
+                        <li>Services</li>
+                        <li>Terms of service</li>
+                        <li>Privacy policy</li>
+                    </ul>
+                </div>
+                <div class="card3">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">IT Talent Acquisition</a></li>
+                        <li><a href="#">Temporary & Contract Staffing</a></li>
+                        <li><a href="#">Executive Search</a></li>
+                        <li><a href="#">Diversity & Inclusion Recruiting</a></li>
+                        <li><a href="#">Employer Branding Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p>© Copyright <strong>Company Inc</strong> All Rights Reserved</p>
+            </div>
+        </footer>
+    </main>
+</body>
+
 </html>
